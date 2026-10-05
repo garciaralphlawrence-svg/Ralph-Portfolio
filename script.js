@@ -28,18 +28,24 @@
 
   /* ---------- Loader ---------- */
   document.body.classList.add('loading');
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      $('#loader').classList.add('done');
-      document.body.classList.remove('loading');
-      document.body.classList.add('ready');
-      startTyping();
-      startTerminal();
-    }, reduceMotion ? 0 : 900);
-  });
+  // Don't wait for every image/CDN asset: reveal once the hero photo is in (or after 2.5s at most)
+  let started = false;
+  function begin() {
+    if (started) return; started = true;
+    $('#loader').classList.add('done');
+    document.body.classList.remove('loading');
+    document.body.classList.add('ready');
+    startTyping();
+    startTerminal();
+  }
+  const heroImg = $('.portrait-img');
+  const minDelay = new Promise(r => setTimeout(r, reduceMotion ? 0 : 800));
+  const imgReady = heroImg.complete ? Promise.resolve() : new Promise(r => { heroImg.addEventListener('load', r); heroImg.addEventListener('error', r); });
+  Promise.all([minDelay, imgReady]).then(begin);
+  setTimeout(begin, 2500);
 
   /* ---------- Typed roles ---------- */
-  const roles = ['Data Scientist', 'Systems Developer', 'Data QA Analyst', 'Automation Builder', 'ML Researcher'];
+  const roles = ['Data Scientist', 'Full-Stack Developer', 'Data QA Analyst', 'Systems Builder', 'ML Researcher'];
   function startTyping() {
     const el = $('#typed');
     if (reduceMotion) { el.textContent = roles[0]; return; }
@@ -61,8 +67,9 @@
     ['', '<k>class</k> <v>Ralph</v>:'],
     ['', '  role   = <s>"Data QA Analyst @ UERM"</s>'],
     ['', '  degree = <s>"BS Data Science, Cum Laude"</s>'],
-    ['', '  stack  = [<s>"Python"</s>, <s>"SQL"</s>, <s>"R"</s>, <s>"AWS S3"</s>]'],
-    ['', '  builds = [<s>"Knowledge Hub"</s>, <s>"KPI Analytics"</s>]'],
+    ['', '  stack  = [<s>"Python"</s>, <s>"SQL"</s>, <s>"Next.js"</s>]'],
+    ['', '  builds = [<s>"Knowledge Hub"</s>, <s>"KPI System"</s>,'],
+    ['', '            <s>"FMA School SIS"</s>]'],
     ['', ''],
     ['', '  <k>def</k> <v>status</v>(self):'],
     ['', '    <k>return</k> <s>"open to opportunities ✓"</s>']
@@ -239,7 +246,7 @@
   /* ---------- 3D tilt + spotlight ---------- */
   if (finePointer && !reduceMotion) {
     $$('.tilt').forEach(el => {
-      const max = el.classList.contains('avatar-wrap') ? 12 : 7;
+      const max = 7;
       el.addEventListener('pointermove', e => {
         const r = el.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
@@ -249,6 +256,19 @@
       });
       el.addEventListener('pointerleave', () => { el.style.transform = ''; });
     });
+
+    /* hero parallax: layers drift by their data-depth */
+    const layers = $$('#heroVisual [data-depth]');
+    let px = 0, py = 0, cx = 0, cy = 0;
+    addEventListener('pointermove', e => { px = e.clientX / innerWidth - .5; py = e.clientY / innerHeight - .5; });
+    (function para() {
+      cx += (px - cx) * .06; cy += (py - cy) * .06;
+      if (scrollY < innerHeight) layers.forEach(l => {
+        const d = +l.dataset.depth;
+        l.style.translate = `${cx * d * -18}px ${cy * d * -18}px`;
+      });
+      requestAnimationFrame(para);
+    })();
 
     /* magnetic buttons */
     $$('.magnetic').forEach(btn => {
