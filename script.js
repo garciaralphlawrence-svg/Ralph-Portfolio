@@ -65,7 +65,7 @@
   const termLines = [
     ['c', '# ralph.py'],
     ['', '<k>class</k> <v>Ralph</v>:'],
-    ['', '  role   = <s>"Data QA Analyst @ UERM"</s>'],
+    ['', '  role   = <s>"Data Scientist & Developer"</s>'],
     ['', '  degree = <s>"BS Data Science, Cum Laude"</s>'],
     ['', '  stack  = [<s>"Python"</s>, <s>"SQL"</s>, <s>"Next.js"</s>]'],
     ['', '  builds = [<s>"Knowledge Hub"</s>, <s>"KPI System"</s>,'],
