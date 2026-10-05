@@ -137,8 +137,9 @@
           <p class="body-text reveal">
             I'm Ralph — a BS Data Science graduate (Cum Laude) from the University of the East. Today I work as a
             <strong>Data Quality Assurance Analyst</strong> at the University of the East – Ramon Magsaysay Memorial Medical Center,
-            where I design and build the internal tools teams rely on: a Knowledge Hub for documents, a KPI Monitoring &amp; Analytics
-            System, and a Quality Improvement platform.
+            where I design and build the internal tools teams rely on. My main project is the <a href="https://quality.uerm.edu.ph/" target="_blank" rel="noopener" class="accent">UERM Quality Management System</a>,
+            a suite of web apps that supports the hospital's ISO 9001 and ISO 21001 requirements. It covers controlled documents, KPIs, records,
+            quality improvement, customer experience, and huddle concerns.
           </p>
           <p class="body-text reveal">
             Outside UERM I build full-stack platforms for real clients — most recently the Future Minds Academy website and
@@ -193,6 +194,7 @@
             </div>
             <p class="t-org">UERM Medical Center · Systems Development / Data &amp; Process Improvement</p>
             <ul class="t-list">
+              <li>Built the <strong>Quality Management System portal</strong> (quality.uerm.edu.ph) for ISO 9001 and ISO 21001: Knowledge Hub, KPI Generator, RADAR, Quality Improvement, Customer Experience, and Huddle 360.</li>
               <li>Designed and implemented the <strong>Knowledge Hub</strong> — document management, search, notifications, and department-based access control.</li>
               <li>Developed and enhanced a <strong>KPI Monitoring &amp; Analytics System</strong> with automated performance classification and reporting.</li>
               <li>Designed SQL databases for users, departments, documents, permissions, and system records.</li>
@@ -335,6 +337,31 @@
         </div>
 
         <div class="projects-grid" id="projectsGrid">
+          <!-- UERM Quality Management System (ISO 9001 / ISO 21001) -->
+          <article class="p-card full qms reveal" data-cat="systems">
+            <div class="qms-media">
+              <video src="qms.mp4" poster="qms_poster.jpg" controls muted loop playsinline autoplay preload="metadata"
+                aria-label="Walkthrough of the UERM Quality Management System portal"></video>
+            </div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">UERM · ISO 9001 &amp; ISO 21001</span><span class="badge-live"><span class="pulse-dot"></span>Live</span></div>
+              <h3>UERM Quality Management System — ISO 9001 &amp; ISO 21001 Portal</h3>
+              <p>The digital home of UERM's Quality Assurance Office, built to meet the requirements of <strong>ISO 9001</strong> (Hospital) and
+                <strong>ISO 21001</strong> (Academe). I designed and built every app in the suite. They run on one shared SQL Server database, and a single
+                Knowledge Hub account signs staff in to the other apps.</p>
+              <ul class="qms-apps">
+                <li><i class="fa-solid fa-book"></i><div><b>Knowledge Hub</b><span>Controlled documents by department, with version history, full-text search, acknowledgements, watermarked drafts, 90-day review reminders, a QAO to-do list, support tickets with live chat, and admin 2-step login.</span></div></li>
+                <li><i class="fa-solid fa-chart-column"></i><div><b>KPI Generator</b><span>KPI registration tagged as BAU, Strategic, ISO or Quality Objective, monthly results with automatic status, remediation plans, Head acceptance, VP approval, and a heatmap.</span></div></li>
+                <li><i class="fa-solid fa-box-archive"></i><div><b>RADAR System</b><span>Records management for archiving, disposal and relocation, with approvals in a set order and a radar-style dashboard.</span></div></li>
+                <li><i class="fa-solid fa-lightbulb"></i><div><b>Quality Improvement</b><span>QI projects in 3 stages, from Idea in Formation to Impact in Motion, with posters, progress reports, and contest registration and judging.</span></div></li>
+                <li><i class="fa-solid fa-face-smile"></i><div><b>Customer Experience</b><span>A 9-step complaint registry with corrective actions and evidence, plus a patient satisfaction module covering NPS, retrieval rate, trend charts and text mining of feedback.</span></div></li>
+                <li><i class="fa-solid fa-people-group"></i><div><b>Huddle 360</b><span>Huddle and rounds concerns that move from Open to Ongoing to Closed automatically, with repeat-issue flags and a 22-indicator board.</span></div></li>
+              </ul>
+              <div class="chip-row"><span>ISO 9001</span><span>ISO 21001</span><span>SQL Server</span><span>Linux</span><span>RBAC</span><span>Analytics</span><span>Text Mining</span><span>Automation</span></div>
+              <a href="https://quality.uerm.edu.ph/" target="_blank" rel="noopener" class="p-link">Visit quality.uerm.edu.ph <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+
           <!-- Knowledge Hub -->
           <article class="p-card featured reveal tilt" data-cat="systems">
             <div class="p-visual mock-hub">
