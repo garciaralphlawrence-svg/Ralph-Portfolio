@@ -1,808 +1,627 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ralph Lawrence F. Garcia - Data Science Portfolio</title>
-    <meta name="description" content="Portfolio of Ralph Lawrence F. Garcia, a BS Data Science graduate candidate focused on analytics, machine learning, and automation. Open to full-time work opportunities.">
-    <meta name="keywords" content="Ralph Garcia, Data Science, Data Analyst, Machine Learning, Portfolio, University of the East, Python, SQL">
-    <meta property="og:title" content="Ralph Lawrence F. Garcia - Data Science Portfolio">
-    <meta property="og:description" content="BS Data Science graduate candidate showcasing projects, research, certifications, and work experience.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="use avatar.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ralph Lawrence F. Garcia - Data Science Portfolio">
-    <meta name="twitter:description" content="Open to full-time work opportunities in data science and analytics.">
-    <meta name="twitter:image" content="use avatar.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ralph Lawrence F. Garcia — Portfolio</title>
+  <meta name="description" content="Ralph Lawrence F. Garcia — Data Scientist & Systems Developer. Building internal web systems, KPI analytics, workflow automation, and machine learning research.">
+  <meta name="theme-color" content="#0b0f1a">
+  <meta property="og:title" content="Ralph Lawrence F. Garcia — Portfolio">
+  <meta property="og:description" content="Data Scientist & Systems Developer. Cum Laude, BS Data Science — University of the East.">
+  <meta property="og:image" content="use%20avatar.png">
+  <link rel="icon" href="use%20avatar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="loader" id="loader">
-        <div class="loader-spinner"></div>
+  <!-- Preloader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <span class="loader-mono">rg<span class="accent">.</span>init()</span>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <canvas id="networkCanvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" aria-label="Home">
+        <span class="logo-mark">RG</span><span class="logo-dot"></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#honors">Honors</a>
+        <a href="#contact">Contact</a>
+        <span class="nav-indicator" id="navIndicator"></span>
+      </nav>
+      <div class="nav-actions">
+        <button class="kbd-btn" id="openPalette" aria-label="Open command palette">
+          <i class="fa-solid fa-magnifying-glass"></i><span class="kbd">Ctrl K</span>
+        </button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="status-pill reveal">
+            <span class="pulse-dot"></span> Open to opportunities · Quezon City, PH
+          </div>
+          <h1 class="hero-title">
+            <span class="line"><span class="word">Hi, I'm</span></span>
+            <span class="line"><span class="word name-gradient">Ralph Garcia.</span></span>
+          </h1>
+          <h2 class="hero-role reveal">
+            <span class="role-prefix">I'm a&nbsp;</span><span class="typed" id="typed"></span><span class="caret"></span>
+          </h2>
+          <p class="hero-sub reveal">
+            Cum Laude Data Science graduate building <strong>internal web systems</strong>, <strong>KPI analytics</strong>,
+            and <strong>workflow automation</strong> at UERM Medical Center — backed by published machine learning and NLP research.
+          </p>
+          <div class="hero-ctas reveal">
+            <a href="#projects" class="btn btn-primary magnetic"><span>View my work</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="RESUME.pdf" class="btn btn-ghost magnetic" download><i class="fa-solid fa-file-arrow-down"></i> <span>Download CV</span></a>
+          </div>
+          <div class="hero-social reveal">
+            <span class="mini-label">Find me on</span>
+            <div class="social-row">
+              <a href="https://www.linkedin.com/in/ralph-garcia-b57814401" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://github.com/garciaralphlawrence-svg" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="mailto:rlawrencegarcia03@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="orbit orbit-1"><span class="orbit-chip"><i class="fa-brands fa-python"></i></span></div>
+          <div class="orbit orbit-2"><span class="orbit-chip"><i class="fa-solid fa-database"></i></span></div>
+          <div class="orbit orbit-3"><span class="orbit-chip"><i class="fa-solid fa-chart-line"></i></span></div>
+          <div class="avatar-wrap tilt">
+            <div class="avatar-ring"></div>
+            <img src="use%20avatar.png" alt="Portrait of Ralph Lawrence F. Garcia" class="avatar">
+          </div>
+          <div class="terminal tilt" id="terminal">
+            <div class="terminal-bar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title">ralph.py</span>
+            </div>
+            <pre class="terminal-body"><code id="terminalCode"></code><span class="block-caret"></span></pre>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Python</span><i>✦</i><span>SQL</span><i>✦</i><span>Machine Learning</span><i>✦</i><span>KPI Analytics</span><i>✦</i>
+        <span>Workflow Automation</span><i>✦</i><span>NLP</span><i>✦</i><span>AWS S3</span><i>✦</i><span>Data Visualization</span><i>✦</i>
+        <span>R</span><i>✦</i><span>Web Systems</span><i>✦</i><span>Research</span><i>✦</i><span>Git</span><i>✦</i>
+      </div>
     </div>
 
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#leadership" class="nav-link">Leadership</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#research" class="nav-link">Research</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow reveal">// About me</p>
+          <h2 class="section-title reveal">I turn messy processes into <span class="accent">clean systems</span> and raw data into decisions.</h2>
+          <p class="body-text reveal">
+            I'm Ralph — a BS Data Science graduate (Cum Laude) from the University of the East. Today I work as a
+            <strong>Data Quality Assurance Analyst</strong> at the University of the East – Ramon Magsaysay Memorial Medical Center,
+            where I design and build the internal tools teams rely on: a Knowledge Hub for documents, a KPI Monitoring &amp; Analytics
+            System, and a Quality Improvement platform.
+          </p>
+          <p class="body-text reveal">
+            My background spans published research (ICCE &amp; ACM), Python automation at Ayala Corporation, and the people skills
+            I picked up behind the counter at Starbucks. I like work where analytics, software, and real users meet.
+          </p>
+          <div class="about-tags reveal">
+            <span><i class="fa-solid fa-graduation-cap"></i> BS Data Science · UE</span>
+            <span><i class="fa-solid fa-hospital"></i> UERM Medical Center</span>
+            <span><i class="fa-solid fa-location-dot"></i> Quezon City</span>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card reveal tilt">
+            <div class="stat-icon"><i class="fa-solid fa-server"></i></div>
+            <div class="stat-num"><span class="count" data-to="4">0</span>+</div>
+            <div class="stat-label">Internal systems built at UERM</div>
+          </div>
+          <div class="stat-card reveal tilt">
+            <div class="stat-icon"><i class="fa-solid fa-flask"></i></div>
+            <div class="stat-num"><span class="count" data-to="7">0</span></div>
+            <div class="stat-label">Research works &amp; studies</div>
+          </div>
+          <div class="stat-card reveal tilt">
+            <div class="stat-icon"><i class="fa-solid fa-book-open"></i></div>
+            <div class="stat-num"><span class="count" data-to="2">0</span></div>
+            <div class="stat-label">International publications (ICCE, ACM)</div>
+          </div>
+          <div class="stat-card reveal tilt">
+            <div class="stat-icon"><i class="fa-solid fa-medal"></i></div>
+            <div class="stat-num">Cum <span class="accent">Laude</span></div>
+            <div class="stat-label">University of the East, 2026</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="container narrow">
+        <p class="eyebrow reveal">// Where I've worked</p>
+        <h2 class="section-title reveal">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-line"><span class="timeline-fill" id="timelineFill"></span></div>
+
+          <article class="t-item reveal">
+            <span class="t-dot live"></span>
+            <div class="t-head">
+              <h3>Data Quality Assurance Analyst <span class="badge-live"><span class="pulse-dot"></span>Current</span></h3>
+              <span class="t-date">2026 — Present</span>
+            </div>
+            <p class="t-org">UERM Medical Center · Systems Development / Data &amp; Process Improvement</p>
+            <ul class="t-list">
+              <li>Designed and implemented the <strong>Knowledge Hub</strong> — document management, search, notifications, and department-based access control.</li>
+              <li>Developed and enhanced a <strong>KPI Monitoring &amp; Analytics System</strong> with automated performance classification and reporting.</li>
+              <li>Designed SQL databases for users, departments, documents, permissions, and system records.</li>
+              <li>Built KPI visualizations and department-level analytics for performance monitoring and quality improvement.</li>
+              <li>Automated recurring workflows and administrative processes to cut manual work.</li>
+              <li>Owned system testing, debugging, troubleshooting, and continuous feature improvements.</li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="chip-row"><span>SQL</span><span>Web Systems</span><span>AWS S3</span><span>Analytics</span><span>Automation</span></div>
+          </article>
+
+          <article class="t-item reveal">
+            <span class="t-dot"></span>
+            <div class="t-head">
+              <h3>Intern — Leasing &amp; Data Department</h3>
+              <span class="t-date">2026</span>
             </div>
+            <p class="t-org">Ayala Corporation</p>
+            <ul class="t-list">
+              <li>Automated repetitive tasks using Python, improving workflow efficiency.</li>
+              <li>Processed and organized data to support business reporting.</li>
+              <li>Collaborated with the team to identify areas for process improvement.</li>
+            </ul>
+            <div class="chip-row"><span>Python</span><span>Excel</span><span>Reporting</span></div>
+          </article>
+
+          <article class="t-item reveal">
+            <span class="t-dot"></span>
+            <div class="t-head">
+              <h3>Barista</h3>
+              <span class="t-date">2022 — 2023</span>
+            </div>
+            <p class="t-org">Starbucks</p>
+            <ul class="t-list">
+              <li>Delivered high-quality customer service in a fast-paced environment.</li>
+              <li>Managed multiple orders efficiently while maintaining accuracy.</li>
+              <li>Strengthened communication and teamwork skills.</li>
+            </ul>
+          </article>
+
+          <article class="t-item reveal">
+            <span class="t-dot edu"></span>
+            <div class="t-head">
+              <h3>BS Data Science — Cum Laude</h3>
+              <span class="t-date">2022 — 2026</span>
+            </div>
+            <p class="t-org">University of the East</p>
+            <ul class="t-list">
+              <li>College Scholar · Academic Achiever (2022–2026).</li>
+              <li>Finance Executive, UE Data Science Society — managed funds, budgeting, and event planning.</li>
+            </ul>
+          </article>
         </div>
-    </nav>
-
-    <section id="home" class="hero">
-        <div class="animated-bg">
-            <div class="particle" style="--x: 20%; --y: 30%;"></div>
-            <div class="particle" style="--x: 80%; --y: 60%;"></div>
-            <div class="particle" style="--x: 50%; --y: 80%;"></div>
-            <div class="particle" style="--x: 10%; --y: 70%;"></div>
-            <div class="particle" style="--x: 90%; --y: 20%;"></div>
-        </div>
-
-        <div class="hero-content">
-            <div class="profile-image-container">
-                <div class="profile-image">
-                    <img src="use avatar.png" alt="Ralph Lawrence F. Garcia Profile" class="profile-pic">
-                </div>
-            </div>
-
-            <h1 class="hero-title">
-                <span class="typing">Ralph Lawrence F. Garcia</span>
-            </h1>
-            <p class="hero-subtitle">Data Science Student | Machine Learning Enthusiast | Automation Builder</p>
-            <p class="seeking-badge">
-                <i class="fas fa-briefcase"></i> Open to: Data Science • Machine Learning • Analytics • Research — Full-time, contract, freelance
-            </p>
-            <p class="hero-description">
-                I am a graduating BS Data Science student who builds practical data solutions, researches real-world
-                problems, and delivers clear technical documentation for teams.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-briefcase"></i> View Projects
-                </a>
-                <a href="#contact" class="btn btn-tertiary">
-                    <i class="fas fa-envelope"></i> Contact Me
-                </a>
-            </div>
-
-            <div class="trust-strip">
-                <span class="trust-item"><i class="fas fa-medal"></i> Cum Laude </span>
-                <span class="trust-item"><i class="fas fa-star"></i> Academic Achiever 2022-2026</span>
-                <span class="trust-item"><i class="fas fa-trophy"></i> Top 4, SAS Curiosity Cup 2025</span>
-            </div>
-        </div>
-
+      </div>
     </section>
 
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="section-divider"></div>
-
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Who I Am</h3>
-                    <p>
-                        I am Ralph Lawrence F. Garcia, a graduating Data Science student from the University of the East.
-                        I enjoy transforming raw data into insights, documenting systems clearly, and applying machine
-                        learning methods to solve meaningful problems.
-                    </p>
-                    <p>
-                        My experience spans internship work in leasing and data operations, customer-facing work in fast-paced
-                        environments, and research projects in text mining, sentiment analysis, and educational technology.
-                    </p>
-                    <p>
-                        I bring a balance of analytical thinking, structured documentation, and collaborative execution.
-                    </p>
-                </div>
-
-                <div class="about-highlights">
-                    <div class="highlight-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h4>Education</h4>
-                        <p>BS Data Science<br>University of the East</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-building"></i>
-                        <h4>Experience</h4>
-                        <p>Ayala Corporation Intern<br>Former Starbucks Barista</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>Focus</h4>
-                        <p>Data Analysis<br>Machine Learning</p>
-                    </div>
-                </div>
-            </div>
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="center-head">
+          <p class="eyebrow reveal">// Toolkit</p>
+          <h2 class="section-title reveal">Skills &amp; Technologies</h2>
+          <p class="section-sub reveal">From data wrangling and modelling to the databases and web systems that put insights in people's hands.</p>
         </div>
+        <div class="skills-grid">
+          <div class="skill-card reveal tilt">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+              <div><h3>Programming</h3><p>Languages I build and analyze with</p></div>
+              <span class="skill-count">04</span>
+            </div>
+            <div class="skill-pills">
+              <span><i class="fa-brands fa-python"></i> Python</span><span><i class="fa-brands fa-r-project"></i> R</span>
+              <span><i class="fa-solid fa-database"></i> SQL</span><span><i class="fa-brands fa-java"></i> Java</span>
+            </div>
+          </div>
+          <div class="skill-card reveal tilt">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-solid fa-chart-pie"></i></div>
+              <div><h3>Data Science</h3><p>Turning data into evidence</p></div>
+              <span class="skill-count">04</span>
+            </div>
+            <div class="skill-pills">
+              <span>Data Analysis</span><span>Data Wrangling</span><span>Statistical Analysis</span><span>Data Visualization</span>
+            </div>
+          </div>
+          <div class="skill-card reveal tilt">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+              <div><h3>ML &amp; AI</h3><p>Models, NLP, and applied AI</p></div>
+              <span class="skill-count">04</span>
+            </div>
+            <div class="skill-pills">
+              <span>Supervised Learning</span><span>Predictive Modeling</span><span>NLP</span><span>AI Applications</span>
+            </div>
+          </div>
+          <div class="skill-card reveal tilt">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-solid fa-gears"></i></div>
+              <div><h3>Systems &amp; Cloud</h3><p>Databases, automation, tooling</p></div>
+              <span class="skill-count">06</span>
+            </div>
+            <div class="skill-pills">
+              <span>Relational DB Design</span><span>Workflow Automation</span><span><i class="fa-brands fa-aws"></i> AWS S3</span>
+              <span><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</span><span><i class="fa-brands fa-html5"></i> HTML/CSS/JS</span><span><i class="fa-solid fa-table"></i> Excel</span>
+            </div>
+          </div>
+        </div>
+        <div class="soft-row reveal">
+          <span>Analytical Thinking</span><span>Problem-Solving</span><span>Communication &amp; Presentation</span>
+          <span>Team Collaboration</span><span>Adaptability</span><span>Project Coordination</span><span>Research &amp; Technical Writing</span>
+        </div>
+      </div>
     </section>
 
-    <section id="education" class="section experience">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="section-divider"></div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Bachelor of Science in Data Science</h3>
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar"></i> 2022-2026
-                            </span>
-                        </div>
-                        <p class="timeline-company">
-                            <i class="fas fa-university"></i> University of the East
-                        </p>
-                        <ul class="timeline-responsibilities">
-                            <li>Expected Graduation: June 2026</li>
-                            <li>College Scholar</li>
-                            <li>Academic Achiever (2022-2026)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="center-head">
+          <p class="eyebrow reveal">// Selected work</p>
+          <h2 class="section-title reveal">Projects</h2>
+          <p class="section-sub reveal">Production systems at UERM, client websites, and machine learning builds.</p>
         </div>
+        <div class="filters reveal" id="projectFilters">
+          <button class="active" data-filter="all">All</button>
+          <button data-filter="systems">Systems</button>
+          <button data-filter="web">Websites</button>
+          <button data-filter="ml">ML &amp; AI</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Knowledge Hub -->
+          <article class="p-card featured reveal tilt" data-cat="systems">
+            <div class="p-visual mock-hub">
+              <div class="mock-window">
+                <div class="mock-side"><i></i><i></i><i></i><i></i></div>
+                <div class="mock-main">
+                  <div class="mock-search"><i class="fa-solid fa-magnifying-glass"></i><span class="mock-type">policy_2026.pdf</span></div>
+                  <div class="mock-file"><i class="fa-solid fa-file-pdf"></i><b></b><em>QA</em></div>
+                  <div class="mock-file"><i class="fa-solid fa-file-word"></i><b></b><em>HR</em></div>
+                  <div class="mock-file"><i class="fa-solid fa-file-excel"></i><b></b><em>IT</em></div>
+                </div>
+                <span class="mock-bell"><i class="fa-solid fa-bell"></i></span>
+              </div>
+            </div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">UERM · Production</span><span class="badge-live"><span class="pulse-dot"></span>In use</span></div>
+              <h3>Knowledge Hub — Document Management</h3>
+              <p>A web-based knowledge-sharing system with department-based access control, uploads, categorization, notifications, and search — backed by a SQL schema and AWS S3 storage.</p>
+              <div class="chip-row"><span>SQL</span><span>AWS S3</span><span>Access Control</span><span>Search</span></div>
+            </div>
+          </article>
+
+          <!-- KPI -->
+          <article class="p-card featured reveal tilt" data-cat="systems">
+            <div class="p-visual mock-kpi">
+              <div class="kpi-bars">
+                <span style="--h:55%"></span><span style="--h:72%"></span><span style="--h:48%"></span><span style="--h:86%"></span>
+                <span style="--h:64%"></span><span style="--h:92%"></span><span style="--h:78%"></span>
+              </div>
+              <svg class="kpi-line" viewBox="0 0 200 80" preserveAspectRatio="none"><path d="M0,60 C25,55 35,30 60,38 S100,62 125,30 S170,12 200,18"/></svg>
+              <div class="kpi-badges"><span class="ok"><i class="fa-solid fa-check"></i> Achieved</span><span class="no"><i class="fa-solid fa-xmark"></i> Not Achieved</span></div>
+            </div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">UERM · Production</span><span class="badge-live"><span class="pulse-dot"></span>In use</span></div>
+              <h3>KPI Monitoring &amp; Analytics System</h3>
+              <p>Tracks departmental performance across reporting periods, auto-classifies results as Achieved / Not Achieved, and surfaces trend charts and department-level analytics.</p>
+              <div class="chip-row"><span>Analytics</span><span>Data Viz</span><span>Automation</span><span>SQL</span></div>
+            </div>
+          </article>
+
+          <!-- QI system -->
+          <article class="p-card reveal tilt" data-cat="systems">
+            <div class="p-visual mock-qi">
+              <div class="qi-col"><b>Plan</b><i></i><i></i></div>
+              <div class="qi-col"><b>Do</b><i></i></div>
+              <div class="qi-col"><b>Check</b><i></i><i></i></div>
+              <div class="qi-col"><b>Act</b><i class="done"></i></div>
+            </div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">UERM</span></div>
+              <h3>Quality Improvement System</h3>
+              <p>Digital project management, monitoring, documentation, and reporting for organizational QI projects — replacing manual paperwork.</p>
+              <div class="chip-row"><span>Workflows</span><span>Reporting</span><span>Automation</span></div>
+            </div>
+          </article>
+
+          <!-- FMA -->
+          <article class="p-card reveal tilt" data-cat="web systems">
+            <div class="p-visual mock-school">
+              <div class="school-hero"><i class="fa-solid fa-school"></i><b></b><b class="short"></b></div>
+              <div class="school-cards"><i></i><i></i><i></i></div>
+            </div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">Web · Concept → Deploy</span></div>
+              <h3>FMA School Website</h3>
+              <p>A responsive school website designed and built from concept to deployment, with structured navigation, accessible content, and interactive components.</p>
+              <div class="chip-row"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
+            </div>
+          </article>
+
+          <!-- PredScan -->
+          <article class="p-card reveal tilt" data-cat="ml">
+            <div class="p-visual mock-ml">
+              <div class="scatter">
+                <i style="--x:12%;--y:30%"></i><i style="--x:22%;--y:62%"></i><i style="--x:30%;--y:40%"></i><i style="--x:40%;--y:70%"></i>
+                <i class="bad" style="--x:62%;--y:22%"></i><i class="bad" style="--x:72%;--y:48%"></i><i class="bad" style="--x:84%;--y:30%"></i><i class="bad" style="--x:78%;--y:68%"></i>
+                <span class="boundary"></span>
+              </div>
+            </div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">Machine Learning</span></div>
+              <h3>PredScan — Detecting Predatory Journals</h3>
+              <p>A classification model that flags suspicious open-access journals using editorial and bibliometric signals.</p>
+              <div class="chip-row"><span>Python</span><span>Classification</span></div>
+              <a href="predscan.html" class="p-link">Read more <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+
+          <!-- KMM -->
+          <article class="p-card reveal tilt" data-cat="web">
+            <div class="p-visual img"><img src="kmm%20homepage.png" alt="KMM travel website screenshot" loading="lazy"></div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">Client Website</span></div>
+              <h3>KMM Travel &amp; Tours</h3>
+              <p>Responsive travel website with destination highlights, service details, and a smoother inquiry flow.</p>
+              <div class="chip-row"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            </div>
+          </article>
+
+          <!-- BizBuddy -->
+          <article class="p-card reveal tilt" data-cat="web">
+            <div class="p-visual img"><img src="bizbuddy.png" alt="BizBuddy website screenshot" loading="lazy"></div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">Client Website</span></div>
+              <h3>BizBuddy</h3>
+              <p>A clean, focused front end presenting business solutions with clear calls to action.</p>
+              <div class="chip-row"><span>UI/UX</span><span>Front-End</span></div>
+            </div>
+          </article>
+
+          <!-- IslaKeys -->
+          <article class="p-card reveal tilt" data-cat="web">
+            <div class="p-visual img"><img src="islakeys_homepage.png" alt="IslaKeys website screenshot" loading="lazy"></div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">Client Website</span></div>
+              <h3>IslaKeys</h3>
+              <p>A visual-first brand website with structured content to strengthen online presence.</p>
+              <div class="chip-row"><span>Branding</span><span>Responsive</span></div>
+            </div>
+          </article>
+
+          <!-- Eastella -->
+          <article class="p-card reveal tilt" data-cat="ml">
+            <div class="p-visual mock-agent">
+              <div class="agent-node core"><i class="fa-solid fa-robot"></i></div>
+              <div class="agent-node n1"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="agent-node n2"><i class="fa-solid fa-database"></i></div>
+              <div class="agent-node n3"><i class="fa-solid fa-file-lines"></i></div>
+            </div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">Documentation</span></div>
+              <h3>EASTELLA — Agentic Information Software</h3>
+              <p>Documented the system architecture and workflows to give technical teams development clarity.</p>
+              <div class="chip-row"><span>Architecture</span><span>Agentic AI</span></div>
+            </div>
+          </article>
+
+          <!-- Algebot -->
+          <article class="p-card reveal tilt" data-cat="ml">
+            <div class="p-visual mock-chat">
+              <div class="bubble left">solve 2x + 4 = 10</div>
+              <div class="bubble right">Subtract 4 → 2x = 6, so <b>x = 3</b> ✓</div>
+              <div class="bubble left typing"><i></i><i></i><i></i></div>
+            </div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">Documentation</span></div>
+              <h3>Algebot — Educational Chatbot</h3>
+              <p>Documentation for a chatbot that helps students learn algebra, focused on usability and a structured learning flow.</p>
+              <div class="chip-row"><span>Chatbot</span><span>EdTech</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="skills" class="section skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="section-divider"></div>
-
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="category-title">Programming Languages</h3>
-                    <div class="skill-cards">
-                        <div class="skill-card">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 90%;"></div></div>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fab fa-r-project"></i>
-                            <span>R</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 82%;"></div></div>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-database"></i>
-                            <span>SQL</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 85%;"></div></div>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fab fa-java"></i>
-                            <span>Java</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 76%;"></div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="category-title">Data & Analytics</h3>
-                    <div class="skill-cards">
-                        <div class="skill-card">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>Data Analysis</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 89%;"></div></div>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-filter"></i>
-                            <span>Data Wrangling</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 86%;"></div></div>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-robot"></i>
-                            <span>Machine Learning</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 84%;"></div></div>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-chart-pie"></i>
-                            <span>Data Visualization</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 86%;"></div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="category-title">Tools & Documentation</h3>
-                    <div class="skill-cards">
-                        <div class="skill-card">
-                            <i class="fas fa-cog"></i>
-                            <span>Automation</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 87%;"></div></div>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-file-alt"></i>
-                            <span>Technical Documentation</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 88%;"></div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="category-title">Soft Skills</h3>
-                    <div class="skill-cards">
-                        <div class="skill-card">
-                            <i class="fas fa-comments"></i>
-                            <span>Communication</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 92%;"></div></div>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-puzzle-piece"></i>
-                            <span>Problem-Solving</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 91%;"></div></div>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-sync-alt"></i>
-                            <span>Adaptability</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 90%;"></div></div>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-users"></i>
-                            <span>Teamwork</span>
-                            <div class="skill-level"><div class="level-fill" style="width: 93%;"></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- RESEARCH -->
+    <section class="section" id="research">
+      <div class="container narrow">
+        <p class="eyebrow reveal">// Published &amp; presented</p>
+        <h2 class="section-title reveal">Research</h2>
+        <p class="section-sub left reveal">Machine learning, NLP, predictive analytics, and educational data science.</p>
+        <div class="filters left reveal" id="researchFilters">
+          <button class="active" data-filter="all">All</button>
+          <button data-filter="ml">Machine Learning</button>
+          <button data-filter="nlp">NLP &amp; Text</button>
+          <button data-filter="edu">Education</button>
+          <button data-filter="pred">Predictive</button>
         </div>
+        <div class="research-list" id="researchList">
+          <a class="r-item reveal" data-cat="nlp" href="leadership-context.html">
+            <span class="r-year">2025</span>
+            <div class="r-main">
+              <h3>Leadership in Context: Rhetoric, Key Themes, and Sentiments in Philippine Presidential Speeches</h3>
+              <p><span class="r-award"><i class="fa-solid fa-trophy"></i> SAS Curiosity Cup 2025 Finalist</span> Sentiment Analysis · NLP</p>
+            </div>
+            <i class="fa-solid fa-arrow-right r-arrow"></i>
+          </a>
+          <a class="r-item reveal" data-cat="ml" href="predscan.html">
+            <span class="r-year">2025</span>
+            <div class="r-main">
+              <h3>PredScan: Detecting Suspected Open Access Predatory Journals Using Machine Learning</h3>
+              <p>Machine Learning · Predictive Analytics</p>
+            </div>
+            <i class="fa-solid fa-arrow-right r-arrow"></i>
+          </a>
+          <a class="r-item reveal" data-cat="pred" href="rice-prices-2024-2025.html">
+            <span class="r-year">2025</span>
+            <div class="r-main">
+              <h3>Data-Driven Insights into Philippine Rice Prices (Jan 2024 – May 2025)</h3>
+              <p>Descriptive &amp; Predictive Analytics · Time Series</p>
+            </div>
+            <i class="fa-solid fa-arrow-right r-arrow"></i>
+          </a>
+          <a class="r-item reveal" data-cat="edu" href="negative-academic-self-concept.html">
+            <span class="r-year">2024</span>
+            <div class="r-main">
+              <h3>Factors Contributing to the Negative Online Learning Academic Self-Concept of College Students</h3>
+              <p><span class="r-award pub"><i class="fa-solid fa-book"></i> ICCE 2024</span> Educational Research · Data Analysis</p>
+            </div>
+            <i class="fa-solid fa-arrow-right r-arrow"></i>
+          </a>
+          <a class="r-item reveal" data-cat="edu" href="students-in-game-behaviors.html">
+            <span class="r-year">2024</span>
+            <div class="r-main">
+              <h3>Students' In-game Behaviors in a Web-based Grade 5 Mathematics Mobile CSCL Environment</h3>
+              <p>Educational Analytics · Behavioral Analysis</p>
+            </div>
+            <i class="fa-solid fa-arrow-right r-arrow"></i>
+          </a>
+          <a class="r-item reveal" data-cat="nlp" href="news-coverage-japan.html">
+            <span class="r-year">2024</span>
+            <div class="r-main">
+              <h3>News Coverage of Philippine Online Newspapers Regarding Japan: A Text Mining Approach</h3>
+              <p>Text Mining · Data Analytics</p>
+            </div>
+            <i class="fa-solid fa-arrow-right r-arrow"></i>
+          </a>
+          <a class="r-item reveal" data-cat="ml" href="predatory-journals-analysis.html">
+            <span class="r-year">2024</span>
+            <div class="r-main">
+              <h3>Predicting Suspected Predatory Open Access Computing Journals</h3>
+              <p><span class="r-award pub"><i class="fa-solid fa-book"></i> ACM 2024</span> Machine Learning · Research Analytics</p>
+            </div>
+            <i class="fa-solid fa-arrow-right r-arrow"></i>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section id="experience" class="section experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="section-divider"></div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Barista</h3>
-                            <span class="timeline-date"><i class="fas fa-calendar"></i> 2022-2023</span>
-                        </div>
-                        <p class="timeline-company"><i class="fas fa-building"></i> Starbucks</p>
-                        <ul class="timeline-responsibilities">
-                            <li>Delivered high-quality customer service in a fast-paced environment</li>
-                            <li>Managed multiple orders efficiently while maintaining accuracy</li>
-                            <li>Strengthened communication and teamwork skills</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Intern (Leasing & Data Department)</h3>
-                            <span class="timeline-date"><i class="fas fa-calendar"></i> 2026</span>
-                        </div>
-                        <p class="timeline-company"><i class="fas fa-building"></i> Ayala Corporation</p>
-                        <ul class="timeline-responsibilities">
-                            <li>Automated repetitive tasks using Python, improving workflow efficiency</li>
-                            <li>Processed and organized data to support business reporting</li>
-                            <li>Collaborated with team members to identify areas for process improvement</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <!-- HONORS & CERTS -->
+    <section class="section" id="honors">
+      <div class="container">
+        <div class="center-head">
+          <p class="eyebrow reveal">// Recognition</p>
+          <h2 class="section-title reveal">Honors &amp; Certifications</h2>
         </div>
+        <div class="honors-grid">
+          <div class="honor-card big reveal tilt">
+            <div class="honor-glow"></div>
+            <i class="fa-solid fa-graduation-cap honor-icon"></i>
+            <h3>Cum Laude</h3>
+            <p>University of the East · June 2026</p>
+            <span class="honor-sub">College Scholar · Academic Achiever 2022–2026</span>
+          </div>
+          <div class="honor-card big reveal tilt">
+            <div class="honor-glow"></div>
+            <i class="fa-solid fa-trophy honor-icon"></i>
+            <h3>Top 5 Finalist</h3>
+            <p>SAS Curiosity Cup International Research Competition · Mar 2025</p>
+            <span class="honor-sub">Leadership in Context: Philippine Presidential Speeches</span>
+          </div>
+        </div>
+        <div class="certs-grid">
+          <div class="cert-card reveal tilt">
+            <div class="cert-img"><img src="google.png" alt="Google Workspace certificate" loading="lazy"></div>
+            <div class="cert-body"><span class="cert-issuer"><i class="fa-brands fa-google"></i> Google</span><h4>Google Workspace Certification &amp; AI Training Workshop</h4></div>
+          </div>
+          <div class="cert-card reveal tilt">
+            <div class="cert-img placeholder"><i class="fa-brands fa-meta"></i></div>
+            <div class="cert-body"><span class="cert-issuer">AI Singapore · Apr 2025</span><h4>Meta AI</h4></div>
+          </div>
+          <div class="cert-card reveal tilt">
+            <div class="cert-img"><img src="asean.png" alt="ASEAN Data Science Explorers certificate" loading="lazy"></div>
+            <div class="cert-body"><span class="cert-issuer">SAP · ASEAN Foundation</span><h4>ASEAN Data Science Explorers 2025</h4></div>
+          </div>
+          <div class="cert-card reveal tilt">
+            <div class="cert-img"><img src="data_science_society.png" alt="UE Data Science Society certificate" loading="lazy"></div>
+            <div class="cert-body"><span class="cert-issuer">Leadership</span><h4>UE Data Science Society — Finance Executive</h4></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="leadership" class="section achievements">
-        <div class="container">
-            <h2 class="section-title">Leadership & Organizations</h2>
-            <div class="section-divider"></div>
-
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-coins"></i></div>
-                    <h3>UE Data Science Society - Finance Executive</h3>
-                    <p>Managed financial records and organizational funds, supported budget planning, and helped execute events.</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Organizational Collaboration</h3>
-                    <p>Coordinated with team members for organizational activities and operations.</p>
-                </div>
-            </div>
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container narrow center">
+        <p class="eyebrow reveal">// What's next?</p>
+        <h2 class="contact-title reveal">Let's build something<br><span class="name-gradient">that matters.</span></h2>
+        <p class="section-sub reveal">I'm open to roles in data science, analytics, and systems development — and to collaborations on research or internal tools.</p>
+        <div class="contact-actions reveal">
+          <a href="mailto:rlawrencegarcia03@gmail.com?subject=Opportunity%20for%20Ralph%20Garcia" class="btn btn-primary magnetic"><i class="fa-solid fa-paper-plane"></i> <span>Say hello</span></a>
+          <button class="btn btn-ghost magnetic" id="copyEmail"><i class="fa-regular fa-copy"></i> <span>rlawrencegarcia03@gmail.com</span></button>
         </div>
+        <div class="social-row big reveal">
+          <a href="https://www.linkedin.com/in/ralph-garcia-b57814401" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/garciaralphlawrence-svg" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="RESUME.pdf" download aria-label="Download CV"><i class="fa-solid fa-file-arrow-down"></i></a>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <section id="projects" class="section projects">
-        <div class="container">
-            <h2 class="section-title">Projects & Research</h2>
-            <div class="section-divider"></div>
+  <footer class="footer">
+    <p>© 2026 Ralph Lawrence F. Garcia · Built with data, code &amp; coffee ☕</p>
+    <p class="footer-hint">Press <span class="kbd">Ctrl K</span> to explore</p>
+  </footer>
 
-            <div class="featured-project">
-                <div class="featured-label">Featured Project</div>
-                <h3>PredScan: Detecting Predatory Journals</h3>
-                <p>
-                    Built a machine learning pipeline to flag suspicious open-access journals, supporting safer
-                    publication decisions through classification and data-driven risk indicators.
-                </p>
-                <div class="featured-details">
-                    <span><i class="fas fa-circle-check"></i> Focus: model-based screening</span>
-                    <span><i class="fas fa-circle-check"></i> Tools: Python, ML classification</span>
-                    <span><i class="fas fa-circle-check"></i> Outcome: clearer journal risk assessment workflow</span>
-                </div>
-            </div>
+  <!-- Command palette -->
+  <div class="palette-backdrop" id="palette" aria-hidden="true">
+    <div class="palette" role="dialog" aria-label="Command palette">
+      <div class="palette-search">
+        <i class="fa-solid fa-terminal"></i>
+        <input id="paletteInput" type="text" placeholder="Type a command or search…" autocomplete="off">
+        <span class="kbd">Esc</span>
+      </div>
+      <ul class="palette-list" id="paletteList"></ul>
+    </div>
+  </div>
 
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>PredScan: Detecting Predatory Journals</h3>
-                        <p>Built a model to identify suspicious open-access journals using data analysis and classification techniques.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Classification</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#contact" class="project-link"><i class="fas fa-file-alt"></i> Request Details</a>
-                            <a href="#contact" class="project-link"><i class="fas fa-envelope"></i> Inquire</a>
-                        </div>
-                    </div>
-                </div>
+  <div class="toast" id="toast"></div>
+  <canvas id="fxCanvas" aria-hidden="true"></canvas>
 
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <i class="fas fa-sitemap"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>EASTELLA: Agentic Information Software</h3>
-                        <p>Documented system architecture and workflow to support development clarity for technical teams.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Documentation</span>
-                            <span class="tech-tag">Architecture</span>
-                            <span class="tech-tag">Workflow</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#contact" class="project-link"><i class="fas fa-file-alt"></i> Request Details</a>
-                            <a href="#contact" class="project-link"><i class="fas fa-envelope"></i> Inquire</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Algebot: Educational Chatbot</h3>
-                        <p>Created documentation for a chatbot assisting algebra learning with a structured usability-focused flow.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Chatbot</span>
-                            <span class="tech-tag">Education</span>
-                            <span class="tech-tag">Documentation</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#contact" class="project-link"><i class="fas fa-file-alt"></i> Request Details</a>
-                            <a href="#contact" class="project-link"><i class="fas fa-envelope"></i> Inquire</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Text Mining on Philippine News Coverage</h3>
-                        <p>Applied text mining to examine themes and trends in Philippine news content.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Text Mining</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">Data Analysis</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#contact" class="project-link"><i class="fas fa-file-alt"></i> Request Details</a>
-                            <a href="#contact" class="project-link"><i class="fas fa-envelope"></i> Inquire</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Online Learning Self-Concept Study</h3>
-                        <p>Conducted research on student self-concept in online learning environments.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Research</span>
-                            <span class="tech-tag">Education</span>
-                            <span class="tech-tag">Analytics</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#contact" class="project-link"><i class="fas fa-file-alt"></i> Request Details</a>
-                            <a href="#contact" class="project-link"><i class="fas fa-envelope"></i> Inquire</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #7f7fd5 0%, #86a8e7 50%, #91eae4 100%);">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Sentiment Analysis of Presidential Speeches</h3>
-                        <p>Top 4 in SAS Curiosity Cup 2025 for sentiment analysis and research presentation quality.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Sentiment Analysis</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">SAS Curiosity Cup</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#contact" class="project-link"><i class="fas fa-file-alt"></i> Request Details</a>
-                            <a href="#contact" class="project-link"><i class="fas fa-envelope"></i> Inquire</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #355c7d 0%, #6c5b7b 50%, #c06c84 100%);">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>KMM Website</h3>
-                        <p>Developed a responsive travel and tour website for KMM with destination highlights, service details, and user-friendly navigation.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-clock"></i> Not Live Yet</a>
-                            <a href="#contact" class="project-link"><i class="fas fa-envelope"></i> Ask for Preview</a>
-                        </div>
-                        <div class="project-proof">
-                            <div class="proof-image-frame">
-                                <img src="kmm%20homepage.png" alt="KMM website screenshot" class="proof-image">
-                            </div>
-                            <ul class="proof-points">
-                                <li>Problem: Need for an organized online presence for travel and tour services</li>
-                                <li>Built: Destination and service sections with responsive, user-friendly pages</li>
-                                <li>Result: Improved clarity of offerings and smoother inquiry flow</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>BizBuddy Website</h3>
-                        <p>Built the BizBuddy website focused on presenting business solutions, improving clarity of offerings, and supporting client engagement.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Web Design</span>
-                            <span class="tech-tag">UI/UX</span>
-                            <span class="tech-tag">Front-End</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-clock"></i> Not Live Yet</a>
-                            <a href="#contact" class="project-link"><i class="fas fa-envelope"></i> Ask for Preview</a>
-                        </div>
-                        <div class="project-proof">
-                            <div class="proof-image-frame">
-                                <img src="bizbuddy.png" alt="BizBuddy website screenshot" class="proof-image">
-                            </div>
-                            <ul class="proof-points">
-                                <li>Problem: Need to communicate business services with better structure</li>
-                                <li>Built: Clean front-end layout with focused sections and clear calls to action</li>
-                                <li>Result: Better service visibility and stronger user engagement flow</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>IslaKeys Website</h3>
-                        <p>Created the IslaKeys website with modern visuals and structured content to showcase brand identity and improve online presence.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Responsive Design</span>
-                            <span class="tech-tag">Branding</span>
-                            <span class="tech-tag">Front-End</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-clock"></i> Not Live Yet</a>
-                            <a href="#contact" class="project-link"><i class="fas fa-envelope"></i> Ask for Preview</a>
-                        </div>
-                        <div class="project-proof">
-                            <div class="proof-image-frame">
-                                <img src="islakeys_homepage.png" alt="IslaKeys website screenshot" class="proof-image">
-                            </div>
-                            <ul class="proof-points">
-                                <li>Problem: Need a modern website aligned with brand identity</li>
-                                <li>Built: Visual-first interface and structured content for easier browsing</li>
-                                <li>Result: Stronger presentation of brand and online discoverability</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="research" class="section research-section">
-        <div class="container">
-            <h2 class="section-title">Research Works</h2>
-            <div class="section-divider"></div>
-            <p class="research-intro">Showcase academic and technical research projects related to machine learning, predictive analytics, text mining, sentiment analysis, educational analytics, and data science research.</p>
-
-            <div class="research-filter" id="researchFilter" role="tablist" aria-label="Research categories">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="Machine Learning">Machine Learning</button>
-                <button class="filter-btn" data-filter="NLP">NLP</button>
-                <button class="filter-btn" data-filter="Predictive Analytics">Predictive Analytics</button>
-                <button class="filter-btn" data-filter="Text Mining">Text Mining</button>
-                <button class="filter-btn" data-filter="Educational Analytics">Educational Analytics</button>
-                <button class="filter-btn" data-filter="Research Analytics">Research Analytics</button>
-            </div>
-
-            <div class="research-grid" id="researchGrid">
-                <!-- Research 1 -->
-                <article class="research-card" data-category="Machine Learning, Predictive Analytics">
-                    <div class="research-card-top">
-                        <div class="research-icon"><i class="fas fa-robot"></i></div>
-                        <div class="research-year">2025</div>
-                    </div>
-                    <div class="research-body">
-                        <h3>PredScan: Detecting Suspected Open Access Predatory Journals Using Machine Learning Model</h3>
-                        <p class="research-meta">Machine Learning / Predictive Analytics</p>
-                        <p class="research-desc">Developed a machine learning-based approach for identifying suspected predatory open-access journals using classification and data analysis techniques.</p>
-                        <div class="research-tags"><span class="tag">Machine Learning</span><span class="tag">Predictive Analytics</span></div>
-                        <div class="research-actions">
-                            <a href="predscan.html" class="project-link research-btn">View Research</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Research 2 -->
-                <article class="research-card" data-category="NLP, Sentiment Analysis">
-                    <div class="research-card-top">
-                        <div class="research-icon"><i class="fas fa-comments"></i></div>
-                        <div class="research-year">2025</div>
-                    </div>
-                    <div class="research-body">
-                        <h3>Leadership in Context: A Comparative Analysis of Rhetoric, Key Themes, and Sentiments in Philippine Presidential Speeches</h3>
-                        <p class="research-meta">Sentiment Analysis / NLP</p>
-                        <p class="research-desc">Performed comparative sentiment and thematic analysis on Philippine presidential speeches using natural language processing and text analytics techniques.</p>
-                        <div class="research-tags"><span class="tag">NLP</span><span class="tag">Sentiment Analysis</span></div>
-                        <div class="research-actions">
-                            <a href="leadership-context.html" class="project-link research-btn">View Research</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Research 3 -->
-                <article class="research-card" data-category="Predictive Analytics, Data Science">
-                    <div class="research-card-top">
-                        <div class="research-icon"><i class="fas fa-chart-line"></i></div>
-                        <div class="research-year">2025</div>
-                    </div>
-                    <div class="research-body">
-                        <h3>Data-Driven Insights into Philippine Rice Prices from January 2024 - May 2025: A Descriptive and Predictive Analytics Approach</h3>
-                        <p class="research-meta">Predictive Analytics / Data Science</p>
-                        <p class="research-desc">Analyzed rice price trends in the Philippines using descriptive analytics and predictive modeling techniques to generate insights and forecasts.</p>
-                        <div class="research-tags"><span class="tag">Predictive Analytics</span><span class="tag">Data Science</span></div>
-                        <div class="research-actions">
-                            <a href="rice-prices-2024-2025.html" class="project-link research-btn">View Research</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Research 4 -->
-                <article class="research-card" data-category="Educational Analytics, Behavioral Analysis">
-                    <div class="research-card-top">
-                        <div class="research-icon"><i class="fas fa-user-graduate"></i></div>
-                        <div class="research-year">2024</div>
-                    </div>
-                    <div class="research-body">
-                        <h3>Students’ In-game Behaviors in a Web-based Grade 5 Mathematics Mobile CSCL Environment: A Comparison Between Adaptive and Non-Adaptive Versions</h3>
-                        <p class="research-meta">Educational Analytics / Behavioral Analysis</p>
-                        <p class="research-desc">Analyzed student in-game learning behaviors in adaptive and non-adaptive collaborative educational systems.</p>
-                        <div class="research-tags"><span class="tag">Educational Analytics</span><span class="tag">Behavioral Analysis</span></div>
-                        <div class="research-actions">
-                            <a href="students-in-game-behaviors.html" class="project-link research-btn">View Research</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Research 5 -->
-                <article class="research-card" data-category="Educational Research, Data Analysis">
-                    <div class="research-card-top">
-                        <div class="research-icon"><i class="fas fa-chart-pie"></i></div>
-                        <div class="research-year">2024</div>
-                    </div>
-                    <div class="research-body">
-                        <h3>Factor Contributing to the Negative Online Learning Academic Self-Concept of College Students</h3>
-                        <p class="research-meta">Educational Research / Data Analysis</p>
-                        <p class="research-desc">Studied factors influencing negative academic self-concept among college students in online learning environments.</p>
-                        <div class="research-tags"><span class="tag">Educational Research</span><span class="tag">Data Analysis</span></div>
-                        <div class="research-actions">
-                            <a href="negative-academic-self-concept.html" class="project-link research-btn">View Research</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Research 6 -->
-                <article class="research-card" data-category="Text Mining, Data Analytics">
-                    <div class="research-card-top">
-                        <div class="research-icon"><i class="fas fa-newspaper"></i></div>
-                        <div class="research-year">2024</div>
-                    </div>
-                    <div class="research-body">
-                        <h3>News Coverage of Mainstream Online Newspapers in the Philippines Regarding Japan: A Text Mining Approach</h3>
-                        <p class="research-meta">Text Mining / Data Analytics</p>
-                        <p class="research-desc">Used text mining techniques to analyze trends and patterns in Philippine online news coverage regarding Japan.</p>
-                        <div class="research-tags"><span class="tag">Text Mining</span><span class="tag">Data Analytics</span></div>
-                        <div class="research-actions">
-                            <a href="news-coverage-japan.html" class="project-link research-btn">View Research</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Research 7 -->
-                <article class="research-card" data-category="Machine Learning, Research Analytics">
-                    <div class="research-card-top">
-                        <div class="research-icon"><i class="fas fa-flask"></i></div>
-                        <div class="research-year">2023</div>
-                    </div>
-                    <div class="research-body">
-                        <h3>Predicting Suspected Predatory Open Access Computing Journals: An Analysis Of Editorial Compliance, Publishing Efficiency, And Bibliometric Services</h3>
-                        <p class="research-meta">Machine Learning / Research Analytics</p>
-                        <p class="research-desc">Analyzed editorial compliance, bibliometric indicators, and publishing efficiency to identify suspected predatory computing journals.</p>
-                        <div class="research-tags"><span class="tag">Machine Learning</span><span class="tag">Research Analytics</span></div>
-                        <div class="research-actions">
-                            <a href="predatory-journals-analysis.html" class="project-link research-btn">View Research</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="certifications" class="section certifications">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="section-divider"></div>
-
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <img src="google.png" alt="Google Workspace Certification" class="cert-image">
-                    <h3>Google Workspace Certification</h3>
-                    <p>Professional certification in Google Workspace productivity and collaboration tools.</p>
-                    <span class="cert-badge">Verified</span>
-                </div>
-
-                <div class="certification-card">
-                    <img src="asean.png" alt="ASEAN Data Science Explorers Certification" class="cert-image">
-                    <h3>ASEAN Data Science Explorers 2025</h3>
-                    <p>Participated in the ASEAN Data Science Explorers 2025 program, advancing knowledge and skills in data science innovation and regional collaboration.</p>
-                    <span class="cert-badge">Verified</span>
-                </div>
-
-                <div class="certification-card">
-                    <img src="data_science_society.png" alt="Data Science Society Certificate" class="cert-image">
-                    <h3>UE Data Science Society Executive</h3>
-                    <p>Finance Executive member of the University of the East Data Science Organization, managing budgets and coordinating organizational activities.</p>
-                    <span class="cert-badge">Leadership</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="achievements" class="section achievements">
-        <div class="container">
-            <h2 class="section-title">Achievements</h2>
-            <div class="section-divider"></div>
-
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-medal"></i></div>
-                    <h3>College Scholar</h3>
-                    <p>Recognized for academic excellence during undergraduate studies.</p>
-                </div>
-
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-star"></i></div>
-                    <h3>Academic Achiever (2022-2026)</h3>
-                    <p>Consistent scholastic performance throughout the program period.</p>
-                </div>
-
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Sentiment Analysis of Presidential Speeches</h3>
-                    <p>Top 4 - SAS Curiosity Cup 2025.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="section-divider"></div>
-
-            <div class="contact-content">
-                <p class="contact-intro">
-                    I am open to work opportunities, entry-level roles, and collaborative projects in data science and analytics.
-                </p>
-
-                <div class="contact-cta-wrap">
-                    <a href="mailto:rlawrencegarcia03@gmail.com?subject=Hiring%20Inquiry%20for%20Ralph%20Garcia" class="btn btn-primary contact-cta-btn">
-                        <i class="fas fa-handshake"></i> Hire Me
-                    </a>
-                </div>
-
-                <div class="contact-methods">
-                    <a href="mailto:rlawrencegarcia03@gmail.com" class="contact-method">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="contact-info">
-                            <h4>Email</h4>
-                            <p>rlawrencegarcia03@gmail.com</p>
-                        </div>
-                    </a>
-
-                        <a href="https://maps.google.com/?q=Quezon+City,+Philippines" target="_blank" class="contact-method">
-                        <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
-                        <div class="contact-info">
-                            <h4>Location</h4>
-                            <p>Quezon City, Philippines</p>
-                        </div>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/ralph-garcia-b57814401" target="_blank" class="contact-method">
-                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                        <div class="contact-info">
-                            <h4>LinkedIn</h4>
-                            <p>linkedin.com/in/ralph-garcia-b57814401</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Ralph Lawrence F. Garcia. All rights reserved.</p>
-            <p class="footer-subtitle">Built with passion and modern web technologies</p>
-        </div>
-    </footer>
-
-    <button class="back-to-top" id="backToTop" title="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
