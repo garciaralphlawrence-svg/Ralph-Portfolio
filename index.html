@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#0b0f1a">
   <meta property="og:title" content="Ralph Lawrence F. Garcia — Portfolio">
   <meta property="og:description" content="Data Scientist & Systems Developer. Cum Laude, BS Data Science — University of the East.">
-  <meta property="og:image" content="use%20avatar.png">
+  <meta property="og:image" content="ralph-cutout.png">
   <link rel="icon" href="use%20avatar.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +72,8 @@
           </h2>
           <p class="hero-sub reveal">
             Cum Laude Data Science graduate building <strong>internal web systems</strong>, <strong>KPI analytics</strong>,
-            and <strong>workflow automation</strong> at UERM Medical Center — backed by published machine learning and NLP research.
+            and <strong>workflow automation</strong> at UERM Medical Center, plus <strong>full-stack platforms</strong> for schools
+            and businesses — backed by published machine learning and NLP research.
           </p>
           <div class="hero-ctas reveal">
             <a href="#projects" class="btn btn-primary magnetic"><span>View my work</span> <i class="fa-solid fa-arrow-right"></i></a>
@@ -88,14 +89,24 @@
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="orbit orbit-1"><span class="orbit-chip"><i class="fa-brands fa-python"></i></span></div>
-          <div class="orbit orbit-2"><span class="orbit-chip"><i class="fa-solid fa-database"></i></span></div>
-          <div class="orbit orbit-3"><span class="orbit-chip"><i class="fa-solid fa-chart-line"></i></span></div>
-          <div class="avatar-wrap tilt">
-            <div class="avatar-ring"></div>
-            <img src="use%20avatar.png" alt="Portrait of Ralph Lawrence F. Garcia" class="avatar">
+        <div class="hero-visual" id="heroVisual">
+          <div class="portrait" data-depth="0.6">
+            <div class="blob" data-depth="1.4"></div>
+            <div class="ring ring-a" data-depth="1"></div>
+            <div class="ring ring-b" data-depth="1.2"></div>
+            <div class="dot-grid" data-depth="1.8"></div>
+            <div class="scanline" aria-hidden="true"></div>
+            <picture>
+              <source srcset="ralph-cutout.webp" type="image/webp">
+              <img src="ralph-cutout.png" alt="Ralph Lawrence F. Garcia in graduation toga" class="portrait-img" width="700" height="1054">
+            </picture>
           </div>
+          <div class="float-chip chip-a" data-depth="2.2"><i class="fa-solid fa-graduation-cap"></i><div><b>Cum Laude</b><small>BS Data Science</small></div></div>
+          <div class="float-chip chip-b" data-depth="2.6"><i class="fa-solid fa-server"></i><div><b>5+ systems</b><small>shipped to real users</small></div></div>
+          <div class="float-chip chip-c" data-depth="1.9"><i class="fa-solid fa-book-open"></i><div><b>ICCE · ACM</b><small>published research</small></div></div>
+          <span class="float-icon fi-1" data-depth="3"><i class="fa-brands fa-python"></i></span>
+          <span class="float-icon fi-2" data-depth="2.4"><i class="fa-solid fa-database"></i></span>
+          <span class="float-icon fi-3" data-depth="3.2"><i class="fa-solid fa-chart-line"></i></span>
           <div class="terminal tilt" id="terminal">
             <div class="terminal-bar">
               <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
@@ -113,7 +124,7 @@
       <div class="marquee-track">
         <span>Python</span><i>✦</i><span>SQL</span><i>✦</i><span>Machine Learning</span><i>✦</i><span>KPI Analytics</span><i>✦</i>
         <span>Workflow Automation</span><i>✦</i><span>NLP</span><i>✦</i><span>AWS S3</span><i>✦</i><span>Data Visualization</span><i>✦</i>
-        <span>R</span><i>✦</i><span>Web Systems</span><i>✦</i><span>Research</span><i>✦</i><span>Git</span><i>✦</i>
+        <span>R</span><i>✦</i><span>Web Systems</span><i>✦</i><span>Research</span><i>✦</i><span>Git</span><i>✦</i><span>Next.js</span><i>✦</i><span>TypeScript</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>Prisma</span><i>✦</i>
       </div>
     </div>
 
@@ -130,8 +141,10 @@
             System, and a Quality Improvement platform.
           </p>
           <p class="body-text reveal">
-            My background spans published research (ICCE &amp; ACM), Python automation at Ayala Corporation, and the people skills
-            I picked up behind the counter at Starbucks. I like work where analytics, software, and real users meet.
+            Outside UERM I build full-stack platforms for real clients — most recently the Future Minds Academy website and
+            school management system (Next.js, TypeScript, PostgreSQL) with student, teacher, and admin portals. My background also spans
+            published research (ICCE &amp; ACM), Python automation at Ayala Corporation, and the people skills I picked up behind the
+            counter at Starbucks. I like work where analytics, software, and real users meet.
           </p>
           <div class="about-tags reveal">
             <span><i class="fa-solid fa-graduation-cap"></i> BS Data Science · UE</span>
@@ -142,8 +155,8 @@
         <div class="stats-grid">
           <div class="stat-card reveal tilt">
             <div class="stat-icon"><i class="fa-solid fa-server"></i></div>
-            <div class="stat-num"><span class="count" data-to="4">0</span>+</div>
-            <div class="stat-label">Internal systems built at UERM</div>
+            <div class="stat-num"><span class="count" data-to="5">0</span>+</div>
+            <div class="stat-label">Systems &amp; sites live in production</div>
           </div>
           <div class="stat-card reveal tilt">
             <div class="stat-icon"><i class="fa-solid fa-flask"></i></div>
@@ -283,7 +296,19 @@
             </div>
             <div class="skill-pills">
               <span>Relational DB Design</span><span>Workflow Automation</span><span><i class="fa-brands fa-aws"></i> AWS S3</span>
-              <span><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</span><span><i class="fa-brands fa-html5"></i> HTML/CSS/JS</span><span><i class="fa-solid fa-table"></i> Excel</span>
+              <span><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</span><span><i class="fa-solid fa-table"></i> Excel</span><span><i class="fa-solid fa-cloud"></i> Vercel</span>
+            </div>
+          </div>
+          <div class="skill-card wide reveal tilt">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-solid fa-layer-group"></i></div>
+              <div><h3>Web &amp; Full-Stack</h3><p>Production web apps, portals, and dashboards</p></div>
+              <span class="skill-count">08</span>
+            </div>
+            <div class="skill-pills">
+              <span><i class="fa-brands fa-html5"></i> HTML/CSS/JS</span><span><i class="fa-brands fa-js"></i> TypeScript</span><span><i class="fa-brands fa-react"></i> React</span>
+              <span><i class="fa-solid fa-n"></i> Next.js</span><span><i class="fa-solid fa-wind"></i> Tailwind CSS</span><span><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span><i class="fa-solid fa-diamond"></i> Prisma ORM</span><span><i class="fa-solid fa-lock"></i> JWT Auth &amp; RBAC</span>
             </div>
           </div>
         </div>
@@ -333,7 +358,7 @@
           </article>
 
           <!-- KPI -->
-          <article class="p-card featured reveal tilt" data-cat="systems">
+          <article class="p-card wide reveal tilt" data-cat="systems">
             <div class="p-visual mock-kpi">
               <div class="kpi-bars">
                 <span style="--h:55%"></span><span style="--h:72%"></span><span style="--h:48%"></span><span style="--h:86%"></span>
@@ -350,6 +375,20 @@
             </div>
           </article>
 
+          <!-- FMA -->
+          <article class="p-card wide reveal tilt" data-cat="web systems">
+            <div class="p-visual img"><img src="fma_homepage.jpg" alt="Future Minds Academy website homepage" loading="lazy"></div>
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">Full-Stack · Client</span><span class="badge-live"><span class="pulse-dot"></span>Live</span></div>
+              <h3>Future Minds Academy — Website &amp; School Management System</h3>
+              <p>A full-stack platform for a Mandaluyong school: public website plus a Student Information System, student &amp; teacher portals,
+                a grade-approval workflow with auto-computed Pass/Fail remarks, an admin dashboard with Excel/CSV registrar sync and analytics,
+                audit logs, and a rule-based support chatbot — secured with JWT auth, CSRF protection, and role-based access.</p>
+              <div class="chip-row"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span><span>Tailwind</span><span>Vercel</span></div>
+              <a href="https://fma-future-minds-academy-fma6.vercel.app/" target="_blank" rel="noopener" class="p-link">Visit live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+
           <!-- QI system -->
           <article class="p-card reveal tilt" data-cat="systems">
             <div class="p-visual mock-qi">
@@ -363,20 +402,6 @@
               <h3>Quality Improvement System</h3>
               <p>Digital project management, monitoring, documentation, and reporting for organizational QI projects — replacing manual paperwork.</p>
               <div class="chip-row"><span>Workflows</span><span>Reporting</span><span>Automation</span></div>
-            </div>
-          </article>
-
-          <!-- FMA -->
-          <article class="p-card reveal tilt" data-cat="web systems">
-            <div class="p-visual mock-school">
-              <div class="school-hero"><i class="fa-solid fa-school"></i><b></b><b class="short"></b></div>
-              <div class="school-cards"><i></i><i></i><i></i></div>
-            </div>
-            <div class="p-body">
-              <div class="p-meta"><span class="p-tag">Web · Concept → Deploy</span></div>
-              <h3>FMA School Website</h3>
-              <p>A responsive school website designed and built from concept to deployment, with structured navigation, accessible content, and interactive components.</p>
-              <div class="chip-row"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
             </div>
           </article>
 
@@ -402,10 +427,11 @@
           <article class="p-card reveal tilt" data-cat="web">
             <div class="p-visual img"><img src="kmm%20homepage.png" alt="KMM travel website screenshot" loading="lazy"></div>
             <div class="p-body">
-              <div class="p-meta"><span class="p-tag">Client Website</span></div>
+              <div class="p-meta"><span class="p-tag">Client Website</span><span class="badge-live"><span class="pulse-dot"></span>Live</span></div>
               <h3>KMM Travel &amp; Tours</h3>
               <p>Responsive travel website with destination highlights, service details, and a smoother inquiry flow.</p>
               <div class="chip-row"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              <a href="https://garciaralphlawrence-svg.github.io/KMM/" target="_blank" rel="noopener" class="p-link">Visit live site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
           </article>
 
