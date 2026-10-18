@@ -194,7 +194,7 @@
             </div>
             <p class="t-org">UERM Medical Center · Systems Development / Data &amp; Process Improvement</p>
             <ul class="t-list">
-              <li>Built the <strong>Quality Management System portal</strong> for ISO 9001 and ISO 21001: Knowledge Hub, KPI Generator, RADAR, Quality Improvement, Customer Experience, and Huddle 360.</li>
+              <li>Built the <strong>Quality Management System portal</strong> for ISO 9001 and ISO 21001: Knowledge Hub, KPI Generator, Risk Register, Privacy Impact Assessment, ISO 9001 and ISO 21001 Internal Audit, Patient Safety, Clinical Pathway, RADAR, Quality Improvement, Customer Experience, and Huddle 360.</li>
               <li>Designed and implemented the <strong>Knowledge Hub</strong> — document management, search, notifications, and department-based access control.</li>
               <li>Developed and enhanced a <strong>KPI Monitoring &amp; Analytics System</strong> with automated performance classification and reporting.</li>
               <li>Designed SQL databases for users, departments, documents, permissions, and system records.</li>
@@ -356,7 +356,83 @@
                 <li><i class="fa-solid fa-lightbulb"></i><div><b>Quality Improvement</b><span>QI projects in 3 stages, from Idea in Formation to Impact in Motion, with posters, progress reports, and contest registration and judging.</span></div></li>
                 <li><i class="fa-solid fa-face-smile"></i><div><b>Customer Experience</b><span>A 9-step complaint registry with corrective actions and evidence, plus a patient satisfaction module covering NPS, retrieval rate, trend charts and text mining of feedback.</span></div></li>
                 <li><i class="fa-solid fa-people-group"></i><div><b>Huddle 360</b><span>Huddle and rounds concerns that move from Open to Ongoing to Closed automatically, with repeat-issue flags and a 22-indicator board.</span></div></li>
+                <li><i class="fa-solid fa-triangle-exclamation"></i><div><b>Risk Register</b><span>Register, assess and treat department risks, with QA review, validation and a live risk map.</span></div></li>
+                <li><i class="fa-solid fa-user-shield"></i><div><b>Privacy Impact Assessment</b><span>Assesses the privacy risk of any process or system that handles personal data, from threshold analysis to a closed PIA with the Data Protection Office.</span></div></li>
+                <li><i class="fa-solid fa-clipboard-check"></i><div><b>ISO 9001 Internal Audit</b><span>The full audit cycle: self-assessment, audits, CARs, Management Review and surveillance, with a Lead Auditor validation gate.</span></div></li>
+                <li><i class="fa-solid fa-graduation-cap"></i><div><b>ISO 21001 Internal Audit</b><span>The EOMS audit cycle for the academic units: self-assessment, audits and CARs.</span></div></li>
+                <li><i class="fa-solid fa-shield-heart"></i><div><b>Patient Safety</b><span>Incident and sentinel event reporting, RCA and CAPA, daily safety rounds and safety indicators.</span></div></li>
+                <li><i class="fa-solid fa-route"></i><div><b>Clinical Pathway</b><span>Register and approve clinical pathways, enroll inpatients, log variances with RCA, and track every pathway KPI.</span></div></li>
               </ul>
+              <div class="ui-gallery-head">
+                <h4><i class="fa-solid fa-display"></i> Interface gallery</h4>
+                <p>Each app has its own visual identity. Screens shown are sign-in and landing pages, so no patient or staff data is exposed. Click a screen to enlarge.</p>
+              </div>
+              <div class="ui-gallery" id="qmsGallery">
+                <figure class="ui-shot ui-shot-wide">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Risk Register screenshot"><img src="qms-ui/riskregister.webp" alt="Risk Register sign-in page with an isometric department risk map" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>ISO Clause 6</span>Risk Register</figcaption>
+                </figure>
+                <figure class="ui-shot ui-shot-wide">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Privacy Impact Assessment screenshot"><img src="qms-ui/pia.webp" alt="Privacy Impact Assessment sign-in page showing the five stages of personal data" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>Data Privacy</span>Privacy Impact Assessment</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge QMS Portal screenshot"><img src="qms-ui/portal.webp" alt="Quality Management System portal home page" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>Portal</span>QMS Portal</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Modules by ISO Clause screenshot"><img src="qms-ui/portal-modules.webp" alt="QMS portal module directory grouped by ISO clause" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>Portal</span>Modules by ISO Clause</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Knowledge Hub screenshot"><img src="qms-ui/knowledgehub.webp" alt="Knowledge Hub landing page styled as a book cover" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>ISO Clause 7</span>Knowledge Hub</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge KPI Generator screenshot"><img src="qms-ui/kpi.webp" alt="KPI Generator landing page with a cat mascot on a bar chart" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>ISO Clause 9</span>KPI Generator</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge ISO 9001 Internal Audit screenshot"><img src="qms-ui/audit.webp" alt="ISO 9001 Internal Audit sign-in page" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>ISO 9001</span>ISO 9001 Internal Audit</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge ISO 21001 Internal Audit screenshot"><img src="qms-ui/audit21001.webp" alt="ISO 21001 Internal Audit sign-in page" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>ISO 21001</span>ISO 21001 Internal Audit</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Patient Safety screenshot"><img src="qms-ui/patientsafety.webp" alt="Patient Safety monitoring system sign-in page" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>Patient Safety</span>Patient Safety</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Clinical Pathway screenshot"><img src="qms-ui/clinicalpathway.webp" alt="Clinical Pathway sign-in page" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>Medical Services</span>Clinical Pathway</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Huddle 360 screenshot"><img src="qms-ui/huddle.webp" alt="Huddle 360 sign-in page" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>Operations</span>Huddle 360</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Customer Experience screenshot"><img src="qms-ui/cx.webp" alt="Customer Experience system sign-in page" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>ISO Clause 9</span>Customer Experience</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge RADAR screenshot"><img src="qms-ui/rms.webp" alt="RADAR records management sign-in page" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>ISO Clause 7</span>RADAR</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Quality Improvement screenshot"><img src="qms-ui/qi.webp" alt="Quality Improvement sign-in page" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>ISO Clause 10</span>Quality Improvement</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge QI Project Contest 2026 screenshot"><img src="qms-ui/qicontest.webp" alt="QI Project Contest 2026 event page with a countdown" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>Event site</span>QI Project Contest 2026</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Policy Feud 2026 screenshot"><img src="qms-ui/policyfeud.webp" alt="Policy Feud 2026 game show event page" loading="lazy" width="1440" height="900"></button>
+                  <figcaption><span>Event site</span>Policy Feud 2026</figcaption>
+                </figure>
+              </div>
               <div class="chip-row"><span>ISO 9001</span><span>ISO 21001</span><span>SQL Server</span><span>Linux</span><span>RBAC</span><span>Analytics</span><span>Text Mining</span><span>Automation</span></div>
             </div>
           </article>
@@ -671,6 +747,13 @@
 
   <div class="toast" id="toast"></div>
   <canvas id="fxCanvas" aria-hidden="true"></canvas>
+
+  <div class="ui-lightbox" id="qmsLightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden>
+    <button type="button" class="ui-lb-btn ui-lb-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button type="button" class="ui-lb-btn ui-lb-prev" aria-label="Previous screenshot"><i class="fa-solid fa-chevron-left"></i></button>
+    <figure class="ui-lb-figure"><img src="" alt=""><figcaption></figcaption></figure>
+    <button type="button" class="ui-lb-btn ui-lb-next" aria-label="Next screenshot"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
 
   <script src="script.js"></script>
 </body>
