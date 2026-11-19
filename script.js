@@ -338,6 +338,7 @@
   const go = id => () => $(id).scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
   const commands = [
     { g: 'Navigate', icon: 'fa-house', label: 'Home', run: go('#home') },
+    { g: 'Navigate', icon: 'fa-microphone-lines', label: 'Latest talk: The Human Behind the Machine', hint: 'fuse speaker', run: go('#talk') },
     { g: 'Navigate', icon: 'fa-user', label: 'About', run: go('#about') },
     { g: 'Navigate', icon: 'fa-briefcase', label: 'Experience', run: go('#experience') },
     { g: 'Navigate', icon: 'fa-code', label: 'Skills', run: go('#skills') },
@@ -392,10 +393,10 @@
   });
 })();
 
-/* QMS interface gallery viewer */
-(function () {
-  const gallery = document.getElementById('qmsGallery');
-  const lightbox = document.getElementById('qmsLightbox');
+/* Gallery viewers: QMS screenshots and the talk photos share the same lightbox design */
+[['qmsGallery', 'qmsLightbox'], ['talkGallery', 'talkLightbox']].forEach(function ([galleryId, lightboxId]) {
+  const gallery = document.getElementById(galleryId);
+  const lightbox = document.getElementById(lightboxId);
   if (!gallery || !lightbox) return;
 
   const shots = Array.from(gallery.querySelectorAll('.ui-shot'));
@@ -438,4 +439,4 @@
     if (e.key === 'ArrowLeft') show(current - 1);
     if (e.key === 'ArrowRight') show(current + 1);
   });
-})();
+});
