@@ -36,6 +36,7 @@
         <span class="logo-mark">RG</span><span class="logo-dot"></span>
       </a>
       <nav class="nav-links" id="navLinks">
+        <a href="#talk">Talk</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
@@ -127,6 +128,58 @@
         <span>R</span><i>✦</i><span>Web Systems</span><i>✦</i><span>Research</span><i>✦</i><span>Git</span><i>✦</i><span>Next.js</span><i>✦</i><span>TypeScript</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>Prisma</span><i>✦</i>
       </div>
     </div>
+
+    <!-- LATEST TALK -->
+    <section class="section talk" id="talk">
+      <div class="container">
+        <div class="talk-head">
+          <p class="eyebrow reveal">// Latest talk · Invited speaker</p>
+          <h2 class="section-title talk-title reveal">The Human <span class="accent">Behind the Machine</span></h2>
+          <div class="talk-meta reveal">
+            <span><i class="fa-solid fa-building-columns"></i> FUSE · Foundation for Upgrading the Standard of Education</span>
+            <span><i class="fa-solid fa-microphone-lines"></i> Invited speaker</span>
+            <span><i class="fa-solid fa-award"></i> Certificate of Appreciation</span>
+          </div>
+        </div>
+
+        <div class="talk-grid" id="talkGallery">
+          <figure class="talk-main reveal ui-shot">
+            <button type="button" class="ui-thumb talk-thumb" aria-label="Enlarge photo: Ralph speaking on stage">
+              <img src="talk/stage.webp" alt="Ralph Garcia speaking on stage in front of a slide that reads: The machine didn't decide which problem to solve. A person did." width="1600" height="898">
+            </button>
+            <figcaption><span>On stage</span>Speaking at FUSE</figcaption>
+          </figure>
+
+          <div class="talk-copy reveal">
+            <p>I was invited by the <strong>Foundation for Upgrading the Standard of Education (FUSE)</strong> to talk with educators about artificial intelligence: what it can already do, what it changes about our work, and why people still matter.</p>
+            <blockquote class="talk-quote">
+              <p>The machine didn't decide which problem to solve. <em>A person did.</em></p>
+              <cite>From the talk</cite>
+            </blockquote>
+            <p class="talk-opener"><i class="fa-solid fa-quote-left"></i> Imagine waking up tomorrow and discovering that a machine can do half of the work you spent years learning to do.</p>
+          </div>
+
+          <figure class="talk-small reveal ui-shot">
+            <button type="button" class="ui-thumb talk-thumb" aria-label="Enlarge photo: audience during the talk">
+              <img src="talk/audience.webp" alt="Ralph speaking to a full room of educators" loading="lazy" width="1600" height="898">
+            </button>
+            <figcaption><span>The room</span>Educators in the audience</figcaption>
+          </figure>
+          <figure class="talk-small tall reveal ui-shot">
+            <button type="button" class="ui-thumb talk-thumb" aria-label="Enlarge photo: receiving the certificate">
+              <img src="talk/certificate.webp" alt="Ralph receiving a Certificate of Appreciation from FUSE" loading="lazy" width="900" height="1600">
+            </button>
+            <figcaption><span>Recognition</span>Certificate of Appreciation</figcaption>
+          </figure>
+          <figure class="talk-small reveal ui-shot">
+            <button type="button" class="ui-thumb talk-thumb" aria-label="Enlarge photo: group photo with attendees">
+              <img src="talk/group.webp" alt="Group photo of Ralph with FUSE officers and attendees" loading="lazy" width="1600" height="898">
+            </button>
+            <figcaption><span>Together</span>With FUSE and the attendees</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
     <!-- ABOUT -->
     <section class="section" id="about">
@@ -823,6 +876,13 @@
     <button type="button" class="ui-lb-btn ui-lb-prev" aria-label="Previous screenshot"><i class="fa-solid fa-chevron-left"></i></button>
     <figure class="ui-lb-figure"><img alt=""><figcaption></figcaption></figure>
     <button type="button" class="ui-lb-btn ui-lb-next" aria-label="Next screenshot"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <div class="ui-lightbox" id="talkLightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button type="button" class="ui-lb-btn ui-lb-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button type="button" class="ui-lb-btn ui-lb-prev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+    <figure class="ui-lb-figure"><img alt=""><figcaption></figcaption></figure>
+    <button type="button" class="ui-lb-btn ui-lb-next" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 
   <script src="script.js"></script>
