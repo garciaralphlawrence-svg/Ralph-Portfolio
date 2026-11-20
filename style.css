@@ -735,3 +735,6 @@ body.subpage li::before { content: "▹"; position: absolute; left: 0; color: va
   .t-item { padding-bottom: 34px; }
   .talk-head { margin-bottom: 24px; }
 }
+
+.moment { --m-accent-rgb: var(--accent-rgb); }
+.moment-cap h3 { color: var(--text, inherit); }

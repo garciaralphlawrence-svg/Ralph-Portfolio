@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="moment.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -814,6 +815,26 @@
           <p class="eyebrow reveal">// Recognition</p>
           <h2 class="section-title reveal">Honors &amp; Certifications</h2>
         </div>
+        <figure class="moment reveal" aria-label="Video: Ralph walking on stage at his graduation">
+          <div class="moment-wrap">
+            <div class="moment-stage">
+              <img class="moment-ambient" src="experience/grad-walk-poster.webp" alt="" aria-hidden="true">
+              <video class="moment-vid" src="experience/grad-walk.mp4" poster="experience/grad-walk-poster.webp" muted loop playsinline preload="metadata"></video>
+              <div class="moment-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <span class="moment-rec" aria-hidden="true"><i></i>REC · PICC</span>
+              <span class="moment-time" aria-hidden="true">00:00:00</span>
+              <span class="moment-play" aria-hidden="true"></span>
+              <div class="moment-bar" aria-hidden="true"><span></span></div>
+              <button type="button" class="moment-sound" aria-pressed="false" aria-label="Turn sound on"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></button>
+            </div>
+          </div>
+          <figcaption class="moment-cap">
+            <span class="moment-kicker">Commencement · June 2026</span>
+            <h3>The walk.</h3>
+            <p>Crossing the stage at PICC to receive my BS Data Science degree, Cum Laude, from the University of the East. Four years of research, systems and data work led to this moment.</p>
+            <div class="moment-tags"><span>Cum Laude</span><span>BS Data Science</span><span>University of the East</span><span>College Scholar</span></div>
+          </figcaption>
+        </figure>
         <div class="honors-grid">
           <div class="honor-card big reveal tilt">
             <div class="honor-glow"></div>
@@ -905,6 +926,7 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="moment.js" defer></script>
   <!-- Kapitan assistant (free mode: answers from built-in website facts, no API key) -->
   <script src="https://garciaralphlawrence-svg.github.io/AI-Analytics-Studio/widget/kapitan.js" data-api="none" data-site="portfolio" defer></script>
 </body>
