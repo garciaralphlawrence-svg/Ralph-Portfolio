@@ -390,7 +390,7 @@
         <div class="center-head">
           <p class="eyebrow reveal">// Selected work</p>
           <h2 class="section-title reveal">Projects</h2>
-          <p class="section-sub reveal">Production systems at UERM, client websites, and machine learning builds.</p>
+          <p class="section-sub reveal">Production systems at UERM, client websites, AI agents, and machine learning builds.</p>
         </div>
         <div class="filters reveal" id="projectFilters">
           <button class="active" data-filter="all">All</button>
@@ -521,6 +521,39 @@
                 </figure>
               </div>
               <div class="chip-row"><span>ISO 9001</span><span>ISO 21001</span><span>SQL Server</span><span>Linux</span><span>RBAC</span><span>Analytics</span><span>Text Mining</span><span>Automation</span></div>
+            </div>
+          </article>
+
+          <!-- Likha HQ — AI operations office -->
+          <article class="p-card full qms likha reveal" data-cat="ml systems">
+            <div class="p-body">
+              <div class="p-meta"><span class="p-tag">AI Agents · Operations</span><span class="badge-live"><span class="pulse-dot"></span>In use</span></div>
+              <h3>Likha HQ — My AI Operations Office</h3>
+              <p>A live 3D office, built with <strong>three.js</strong>, where each of the <strong>22 websites</strong> I manage has its own dedicated AI agent built with
+                <strong>Claude Code</strong>: 23 AI workers in all, including <strong>Bantay</strong>, the security agent. A desk lights up in real time when its agent
+                is working on that site, and clicking a desk opens its worker.</p>
+              <div class="ui-gallery likha-gallery" id="likhaGallery">
+                <figure class="ui-shot ui-shot-wide">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Likha HQ office overview"><img src="likha-hq/likha-hq-office.webp" alt="Likha HQ 3D office seen from above, with website desks grouped into zones and a status legend" loading="lazy" width="1920" height="1200"></button>
+                  <figcaption><span>three.js</span>The 3D office</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge Bantay security panel"><img src="likha-hq/likha-hq-bantay.webp" alt="Bantay the security guard walking the office, with a 24/7 Watch panel showing All clear and 22 of 22 websites OK" loading="lazy" width="1920" height="1200"></button>
+                  <figcaption><span>Security agent</span>Bantay on patrol</figcaption>
+                </figure>
+                <figure class="ui-shot">
+                  <button type="button" class="ui-thumb" aria-label="Enlarge website desk panel"><img src="likha-hq/likha-hq-desk.webp" alt="One website desk with its AI worker and a 24/7 Watch result saying the site passed every check" loading="lazy" width="1920" height="1200"></button>
+                  <figcaption><span>One desk</span>A website and its worker</figcaption>
+                </figure>
+              </div>
+              <ul class="qms-apps">
+                <li><i class="fa-solid fa-bolt"></i><div><b>Live from Claude Code</b><span>Claude Code hooks report agent activity, so desks show working, thinking or needs-you states as it happens. A small Python server auto-discovers new website folders and creates their agent.</span></div></li>
+                <li><i class="fa-solid fa-shield-halved"></i><div><b>24/7 Watch</b><span>Hourly GitHub Actions checks of every website, even when my PC is off: uptime and speed, HTTPS certificate, security policy (CSP), exposed private files, and private pages that must require login.</span></div></li>
+                <li><i class="fa-solid fa-key"></i><div><b>Leaks &amp; privacy checks</b><span>Scans pages, scripts and code for leaked keys (code scan every 6 hours), and flags new third-party trackers, new emails or phone numbers on a page, content changes and broken links.</span></div></li>
+                <li><i class="fa-solid fa-user-check"></i><div><b>Plain-language fixes</b><span>Results feed the office as red or amber desk lights with a suggested fix in plain words, handed to that site's agent. Nothing goes live without my approval.</span></div></li>
+                <li><i class="fa-solid fa-gauge-high"></i><div><b>Built to run all day</b><span>Static geometry merged, shadows rendered once, adaptive quality tiers, and an idle frame cap: 30 fps when idle, 12 fps in the background.</span></div></li>
+              </ul>
+              <div class="chip-row"><span>three.js</span><span>Python</span><span>Claude Code Agents</span><span>Claude Code Hooks</span><span>GitHub Actions</span><span>Security Monitoring</span></div>
             </div>
           </article>
 
@@ -916,6 +949,13 @@
   <canvas id="fxCanvas" aria-hidden="true"></canvas>
 
   <div class="ui-lightbox" id="qmsLightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden>
+    <button type="button" class="ui-lb-btn ui-lb-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button type="button" class="ui-lb-btn ui-lb-prev" aria-label="Previous screenshot"><i class="fa-solid fa-chevron-left"></i></button>
+    <figure class="ui-lb-figure"><img alt=""><figcaption></figcaption></figure>
+    <button type="button" class="ui-lb-btn ui-lb-next" aria-label="Next screenshot"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <div class="ui-lightbox" id="likhaLightbox" role="dialog" aria-modal="true" aria-label="Likha HQ screenshot viewer" hidden>
     <button type="button" class="ui-lb-btn ui-lb-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
     <button type="button" class="ui-lb-btn ui-lb-prev" aria-label="Previous screenshot"><i class="fa-solid fa-chevron-left"></i></button>
     <figure class="ui-lb-figure"><img alt=""><figcaption></figcaption></figure>

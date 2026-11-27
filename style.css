@@ -646,6 +646,11 @@ body.subpage li::before { content: "▹"; position: absolute; left: 0; color: va
 .ui-lb-btn:hover { background: rgba(var(--accent-rgb), .35); }
 .ui-lb-close { position: absolute; top: 18px; right: 18px; }
 @media (max-width: 1080px) { .ui-gallery { grid-template-columns: repeat(3, 1fr); } }
+/* Likha HQ: one big office shot plus two stacked panels, no empty cells */
+.ui-gallery.likha-gallery { grid-template-columns: 2.25fr 1fr; margin: 20px 0 4px; }
+.ui-gallery.likha-gallery .ui-shot-wide { grid-column: auto; }
+.p-card.likha .qms-apps { margin-top: 22px; }
+@media (max-width: 680px) { .ui-gallery.likha-gallery { grid-template-columns: 1fr 1fr; } .ui-gallery.likha-gallery .ui-shot-wide { grid-column: span 2; } }
 @media (max-width: 680px) {
   .ui-gallery { grid-template-columns: 1fr 1fr; }
   .ui-shot-wide { grid-row: auto; }

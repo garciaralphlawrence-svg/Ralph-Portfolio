@@ -394,7 +394,7 @@
 })();
 
 /* Gallery viewers: QMS screenshots and the talk photos share the same lightbox design */
-[['qmsGallery', 'qmsLightbox'], ['talkGallery', 'talkLightbox']].forEach(function ([galleryId, lightboxId]) {
+[['qmsGallery', 'qmsLightbox'], ['likhaGallery', 'likhaLightbox'], ['talkGallery', 'talkLightbox']].forEach(function ([galleryId, lightboxId]) {
   const gallery = document.getElementById(galleryId);
   const lightbox = document.getElementById(lightboxId);
   if (!gallery || !lightbox) return;
